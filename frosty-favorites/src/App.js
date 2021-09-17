@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Nav, Navbar, Container } from 'react-bootstrap';
+import { Nav, Navbar, Container, Form, Button } from 'react-bootstrap';
 import './index.css';
 import mountain from './images/snowed-mountains.png';
 
@@ -31,6 +31,15 @@ function App() {
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
+              <Form className="d-flex">
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="mr-2"
+                  aria-label="Search"
+                />
+                <Button variant="outline-success">Search</Button>
+              </Form>
             </Navbar.Collapse>
           </Container>
         </Navbar>
