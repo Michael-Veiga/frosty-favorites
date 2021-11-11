@@ -1,5 +1,6 @@
 import React from 'react';
 import FormContent from './FormContent';
+import { Button, Container } from 'react-bootstrap';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -19,12 +20,25 @@ class ReviewForm extends React.Component {
   render() {
     if (this.state.display) {
       return (
-        <button id="customBtn" className="mt-auto" onClick={this.toggleDisplay}>
+        <Button id="customBtn" className="mt-auto" onClick={this.toggleDisplay}>
           Write a review
-        </button>
+        </Button>
       );
     } else {
-      return <FormContent />;
+      return (
+        <Container className="d-grid gap-3">
+          <FormContent />
+          <Button
+            className=""
+            type="button"
+            variant="danger"
+            size="md"
+            onClick={this.toggleDisplay}
+          >
+            Cancel Review
+          </Button>
+        </Container>
+      );
     }
   }
 }
