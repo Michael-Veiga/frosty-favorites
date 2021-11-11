@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Container, Button } from 'react-bootstrap';
 import { useState } from 'react';
+import Axios from 'axios';
 
 function FormContent() {
   const [name, setName] = useState('');
@@ -9,9 +10,22 @@ function FormContent() {
   const [date, setDate] = useState('');
   const [review, setReview] = useState('');
 
-  const displayInfo = () => {
-    console.log(name + mountain + stars + date + review);
+  //   const displayInfo = () => {
+  //     console.log(name + mountain + stars + date + review);
+  //   };
+
+  const addReview = () => {
+    Axios.post('http://localhost:3001/create', {
+      name: name,
+      mountain: mountain,
+      stars: stars,
+      date: date,
+      review: review,
+    }).then(() => {
+      console.log('success');
+    });
   };
+
   return (
     <div>
       <Container>
@@ -72,7 +86,7 @@ function FormContent() {
               }}
             />
           </Form.Group>
-          <Button variant="primary" type="button" onClick={displayInfo}>
+          <Button variant="primary" type="button" onClick={addReview}>
             Submit
           </Button>
         </Form>
