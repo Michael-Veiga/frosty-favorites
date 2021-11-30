@@ -10,10 +10,6 @@ function FormContent() {
   const [date, setDate] = useState('');
   const [review, setReview] = useState('');
 
-  //   const displayInfo = () => {
-  //     console.log(name + mountain + stars + date + review);
-  //   };
-
   const addReview = () => {
     Axios.post('http://localhost:3001/create', {
       name: name,
@@ -85,7 +81,7 @@ function FormContent() {
             }}
           />
         </Form.Group>
-        <Button variant="primary" type="button" onClick={addReview}>
+        <Button variant="primary" type="click" onClick={addReview}>
           Submit
         </Button>
       </Form>

@@ -1,6 +1,6 @@
 import React from 'react';
 import FormContent from './FormContent';
-import { Button, Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class ReviewForm extends React.Component {
       );
     } else {
       return (
-        <Container className="d-grid gap-3">
+        <div>
           <FormContent />
           <Button
             className=""
@@ -37,7 +37,7 @@ class ReviewForm extends React.Component {
           >
             Cancel Review
           </Button>
-        </Container>
+        </div>
       );
     }
   }
